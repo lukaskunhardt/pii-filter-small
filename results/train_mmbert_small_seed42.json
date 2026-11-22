@@ -1,0 +1,211 @@
+{
+ "args": {
+  "base": "jhu-clsp/mmBERT-small",
+  "seed": 42,
+  "epochs": 3,
+  "lr": 5e-05,
+  "batch": 16,
+  "alpha": 1.0,
+  "max_len": 512,
+  "evals": 6
+ },
+ "best_dev_char_f1": 0.9034,
+ "best_step": 5856,
+ "best_per_lang": {
+  "dev/all": {
+   "n": 1150,
+   "span_f1": 0.6407,
+   "char_f1": 0.9034,
+   "span_p": 0.6688,
+   "span_r": 0.6149
+  },
+  "dev/ar": {
+   "n": 35,
+   "span_f1": 0.6509,
+   "char_f1": 0.9162,
+   "span_p": 0.6865,
+   "span_r": 0.6187
+  },
+  "dev/cs": {
+   "n": 22,
+   "span_f1": 0.5789,
+   "char_f1": 0.8948,
+   "span_p": 0.5881,
+   "span_r": 0.5701
+  },
+  "dev/da": {
+   "n": 45,
+   "span_f1": 0.6032,
+   "char_f1": 0.8684,
+   "span_p": 0.6401,
+   "span_r": 0.5703
+  },
+  "dev/de": {
+   "n": 99,
+   "span_f1": 0.7058,
+   "char_f1": 0.9308,
+   "span_p": 0.7183,
+   "span_r": 0.6937
+  },
+  "dev/en": {
+   "n": 127,
+   "span_f1": 0.6336,
+   "char_f1": 0.8581,
+   "span_p": 0.6871,
+   "span_r": 0.5878
+  },
+  "dev/es": {
+   "n": 88,
+   "span_f1": 0.6434,
+   "char_f1": 0.9243,
+   "span_p": 0.6673,
+   "span_r": 0.6213
+  },
+  "dev/fi": {
+   "n": 18,
+   "span_f1": 0.4889,
+   "char_f1": 0.7818,
+   "span_p": 0.4873,
+   "span_r": 0.4904
+  },
+  "dev/fr": {
+   "n": 92,
+   "span_f1": 0.6619,
+   "char_f1": 0.9226,
+   "span_p": 0.6952,
+   "span_r": 0.6316
+  },
+  "dev/hi": {
+   "n": 41,
+   "span_f1": 0.6135,
+   "char_f1": 0.8754,
+   "span_p": 0.6513,
+   "span_r": 0.5799
+  },
+  "dev/id": {
+   "n": 27,
+   "span_f1": 0.5732,
+   "char_f1": 0.8951,
+   "span_p": 0.6667,
+   "span_r": 0.5027
+  },
+  "dev/it": {
+   "n": 70,
+   "span_f1": 0.6858,
+   "char_f1": 0.9209,
+   "span_p": 0.6861,
+   "span_r": 0.6855
+  },
+  "dev/ja": {
+   "n": 43,
+   "span_f1": 0.6083,
+   "char_f1": 0.9029,
+   "span_p": 0.6242,
+   "span_r": 0.5933
+  },
+  "dev/ko": {
+   "n": 36,
+   "span_f1": 0.6655,
+   "char_f1": 0.9289,
+   "span_p": 0.6948,
+   "span_r": 0.6386
+  },
+  "dev/nl": {
+   "n": 67,
+   "span_f1": 0.6982,
+   "char_f1": 0.9215,
+   "span_p": 0.7124,
+   "span_r": 0.6845
+  },
+  "dev/no": {
+   "n": 23,
+   "span_f1": 0.6107,
+   "char_f1": 0.8964,
+   "span_p": 0.6361,
+   "span_r": 0.5872
+  },
+  "dev/pl": {
+   "n": 56,
+   "span_f1": 0.5879,
+   "char_f1": 0.8681,
+   "span_p": 0.6295,
+   "span_r": 0.5515
+  },
+  "dev/pt": {
+   "n": 66,
+   "span_f1": 0.6404,
+   "char_f1": 0.9214,
+   "span_p": 0.6424,
+   "span_r": 0.6385
+  },
+  "dev/ro": {
+   "n": 22,
+   "span_f1": 0.5888,
+   "char_f1": 0.8402,
+   "span_p": 0.6156,
+   "span_r": 0.5643
+  },
+  "dev/ru": {
+   "n": 52,
+   "span_f1": 0.5941,
+   "char_f1": 0.92,
+   "span_p": 0.6416,
+   "span_r": 0.5532
+  },
+  "dev/sv": {
+   "n": 42,
+   "span_f1": 0.5797,
+   "char_f1": 0.8802,
+   "span_p": 0.6261,
+   "span_r": 0.5397
+  },
+  "dev/tr": {
+   "n": 36,
+   "span_f1": 0.6519,
+   "char_f1": 0.9041,
+   "span_p": 0.6606,
+   "span_r": 0.6434
+  },
+  "dev/zh": {
+   "n": 43,
+   "span_f1": 0.6702,
+   "char_f1": 0.9335,
+   "span_p": 0.7057,
+   "span_r": 0.6381
+  }
+ },
+ "history": [
+  {
+   "step": 976,
+   "dev_char_f1": 0.8699,
+   "dev_span_f1": 0.5746
+  },
+  {
+   "step": 1952,
+   "dev_char_f1": 0.8986,
+   "dev_span_f1": 0.6151
+  },
+  {
+   "step": 2928,
+   "dev_char_f1": 0.8982,
+   "dev_span_f1": 0.6247
+  },
+  {
+   "step": 3904,
+   "dev_char_f1": 0.9004,
+   "dev_span_f1": 0.6336
+  },
+  {
+   "step": 4880,
+   "dev_char_f1": 0.9029,
+   "dev_span_f1": 0.6339
+  },
+  {
+   "step": 5856,
+   "dev_char_f1": 0.9034,
+   "dev_span_f1": 0.6407
+  }
+ ],
+ "params": 140654241,
+ "seconds": 1259
+}

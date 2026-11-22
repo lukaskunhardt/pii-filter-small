@@ -1,0 +1,34 @@
+{
+ "note": "Development split (1,150 own texts, teacher spans as reference): PyTorch, ONNX fp32 and ONNX int8 of seed 43.",
+ "src": "seed 43",
+ "threads": 8,
+ "dev_texts": 1150,
+ "bytes": {
+  "model.onnx": 563145857,
+  "model_int8.onnx": 437154020
+ },
+ "torch": {
+  "n": 1150,
+  "span_f1": 0.6383,
+  "char_f1": 0.9042,
+  "span_p": 0.6645,
+  "span_r": 0.6141,
+  "cpu_ms_per_1k_chars": 195.8
+ },
+ "onnx_fp32": {
+  "n": 1150,
+  "span_f1": 0.6383,
+  "char_f1": 0.9042,
+  "span_p": 0.6645,
+  "span_r": 0.6141,
+  "cpu_ms_per_1k_chars": 120.7
+ },
+ "onnx_int8": {
+  "n": 1150,
+  "span_f1": 0.6124,
+  "char_f1": 0.8971,
+  "span_p": 0.6373,
+  "span_r": 0.5895,
+  "cpu_ms_per_1k_chars": 97.7
+ }
+}

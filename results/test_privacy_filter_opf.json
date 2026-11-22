@@ -1,0 +1,349 @@
+{
+ "note": "openai/privacy-filter through its official package opf (default settings, whole text at once), GPU.",
+ "opf_viterbi": {
+  "ai4privacy/Dutch": {
+   "n": 200,
+   "span_f1": 0.8406,
+   "char_f1": 0.9327,
+   "span_p": 0.8445,
+   "span_r": 0.8367
+  },
+  "ai4privacy/English": {
+   "n": 200,
+   "span_f1": 0.8968,
+   "char_f1": 0.961,
+   "span_p": 0.8985,
+   "span_r": 0.8951
+  },
+  "ai4privacy/French": {
+   "n": 200,
+   "span_f1": 0.8975,
+   "char_f1": 0.9628,
+   "span_p": 0.8831,
+   "span_r": 0.9124
+  },
+  "ai4privacy/German": {
+   "n": 200,
+   "span_f1": 0.8864,
+   "char_f1": 0.9577,
+   "span_p": 0.8718,
+   "span_r": 0.9015
+  },
+  "ai4privacy/Italian": {
+   "n": 200,
+   "span_f1": 0.8788,
+   "char_f1": 0.9352,
+   "span_p": 0.8545,
+   "span_r": 0.9045
+  },
+  "ai4privacy/Spanish": {
+   "n": 200,
+   "span_f1": 0.9031,
+   "char_f1": 0.9602,
+   "span_p": 0.896,
+   "span_r": 0.9103
+  },
+  "ai4privacy/all": {
+   "n": 1200,
+   "span_f1": 0.8833,
+   "char_f1": 0.9517,
+   "span_p": 0.8745,
+   "span_r": 0.8923
+  },
+  "gretel/Dutch": {
+   "n": 150,
+   "span_f1": 0.4406,
+   "char_f1": 0.6196,
+   "span_p": 0.3574,
+   "span_r": 0.5745
+  },
+  "gretel/English": {
+   "n": 150,
+   "span_f1": 0.5176,
+   "char_f1": 0.6531,
+   "span_p": 0.4887,
+   "span_r": 0.5501
+  },
+  "gretel/France": {
+   "n": 150,
+   "span_f1": 0.4929,
+   "char_f1": 0.6904,
+   "span_p": 0.4032,
+   "span_r": 0.6341
+  },
+  "gretel/German": {
+   "n": 150,
+   "span_f1": 0.4587,
+   "char_f1": 0.6067,
+   "span_p": 0.3648,
+   "span_r": 0.6175
+  },
+  "gretel/Italian": {
+   "n": 150,
+   "span_f1": 0.4212,
+   "char_f1": 0.6249,
+   "span_p": 0.3256,
+   "span_r": 0.5962
+  },
+  "gretel/Spanish": {
+   "n": 150,
+   "span_f1": 0.4941,
+   "char_f1": 0.6695,
+   "span_p": 0.403,
+   "span_r": 0.6385
+  },
+  "gretel/Swedish": {
+   "n": 150,
+   "span_f1": 0.4327,
+   "char_f1": 0.5925,
+   "span_p": 0.3558,
+   "span_r": 0.5522
+  },
+  "gretel/all": {
+   "n": 1050,
+   "span_f1": 0.4645,
+   "char_f1": 0.6367,
+   "span_p": 0.3817,
+   "span_r": 0.5931
+  },
+  "kiji/Danish": {
+   "n": 150,
+   "span_f1": 0.3241,
+   "char_f1": 0.784,
+   "span_p": 0.5171,
+   "span_r": 0.236
+  },
+  "kiji/Dutch": {
+   "n": 150,
+   "span_f1": 0.4331,
+   "char_f1": 0.8382,
+   "span_p": 0.6207,
+   "span_r": 0.3325
+  },
+  "kiji/English": {
+   "n": 150,
+   "span_f1": 0.3711,
+   "char_f1": 0.8341,
+   "span_p": 0.5226,
+   "span_r": 0.2877
+  },
+  "kiji/French": {
+   "n": 150,
+   "span_f1": 0.392,
+   "char_f1": 0.8287,
+   "span_p": 0.5293,
+   "span_r": 0.3112
+  },
+  "kiji/German": {
+   "n": 150,
+   "span_f1": 0.3908,
+   "char_f1": 0.8562,
+   "span_p": 0.5524,
+   "span_r": 0.3023
+  },
+  "kiji/Spanish": {
+   "n": 150,
+   "span_f1": 0.4621,
+   "char_f1": 0.846,
+   "span_p": 0.5854,
+   "span_r": 0.3817
+  },
+  "kiji/all": {
+   "n": 900,
+   "span_f1": 0.3966,
+   "char_f1": 0.8321,
+   "span_p": 0.5564,
+   "span_r": 0.3081
+  },
+  "nemotron/English": {
+   "n": 1000,
+   "span_f1": 0.6615,
+   "char_f1": 0.8231,
+   "span_p": 0.793,
+   "span_r": 0.5675
+  },
+  "nemotron/all": {
+   "n": 1000,
+   "span_f1": 0.6615,
+   "char_f1": 0.8231,
+   "span_p": 0.793,
+   "span_r": 0.5675
+  },
+  "warnings": 0,
+  "text_mismatch": 0,
+  "seconds": 132
+ },
+ "opf_argmax": {
+  "ai4privacy/Dutch": {
+   "n": 200,
+   "span_f1": 0.8294,
+   "char_f1": 0.933,
+   "span_p": 0.8263,
+   "span_r": 0.8325
+  },
+  "ai4privacy/English": {
+   "n": 200,
+   "span_f1": 0.8865,
+   "char_f1": 0.9619,
+   "span_p": 0.8808,
+   "span_r": 0.8923
+  },
+  "ai4privacy/French": {
+   "n": 200,
+   "span_f1": 0.8871,
+   "char_f1": 0.9625,
+   "span_p": 0.8685,
+   "span_r": 0.9065
+  },
+  "ai4privacy/German": {
+   "n": 200,
+   "span_f1": 0.8765,
+   "char_f1": 0.9576,
+   "span_p": 0.8568,
+   "span_r": 0.8971
+  },
+  "ai4privacy/Italian": {
+   "n": 200,
+   "span_f1": 0.8662,
+   "char_f1": 0.9345,
+   "span_p": 0.8344,
+   "span_r": 0.9004
+  },
+  "ai4privacy/Spanish": {
+   "n": 200,
+   "span_f1": 0.8972,
+   "char_f1": 0.9602,
+   "span_p": 0.8837,
+   "span_r": 0.9112
+  },
+  "ai4privacy/all": {
+   "n": 1200,
+   "span_f1": 0.8733,
+   "char_f1": 0.9518,
+   "span_p": 0.8582,
+   "span_r": 0.8889
+  },
+  "gretel/Dutch": {
+   "n": 150,
+   "span_f1": 0.3806,
+   "char_f1": 0.6192,
+   "span_p": 0.2915,
+   "span_r": 0.5485
+  },
+  "gretel/English": {
+   "n": 150,
+   "span_f1": 0.4478,
+   "char_f1": 0.6481,
+   "span_p": 0.3918,
+   "span_r": 0.5226
+  },
+  "gretel/France": {
+   "n": 150,
+   "span_f1": 0.4446,
+   "char_f1": 0.6884,
+   "span_p": 0.3464,
+   "span_r": 0.6205
+  },
+  "gretel/German": {
+   "n": 150,
+   "span_f1": 0.3921,
+   "char_f1": 0.6035,
+   "span_p": 0.2918,
+   "span_r": 0.5975
+  },
+  "gretel/Italian": {
+   "n": 150,
+   "span_f1": 0.3461,
+   "char_f1": 0.6225,
+   "span_p": 0.248,
+   "span_r": 0.5728
+  },
+  "gretel/Spanish": {
+   "n": 150,
+   "span_f1": 0.4286,
+   "char_f1": 0.6698,
+   "span_p": 0.3265,
+   "span_r": 0.6234
+  },
+  "gretel/Swedish": {
+   "n": 150,
+   "span_f1": 0.3661,
+   "char_f1": 0.5884,
+   "span_p": 0.2774,
+   "span_r": 0.5382
+  },
+  "gretel/all": {
+   "n": 1050,
+   "span_f1": 0.399,
+   "char_f1": 0.6343,
+   "span_p": 0.3061,
+   "span_r": 0.5731
+  },
+  "kiji/Danish": {
+   "n": 150,
+   "span_f1": 0.3149,
+   "char_f1": 0.7846,
+   "span_p": 0.4633,
+   "span_r": 0.2385
+  },
+  "kiji/Dutch": {
+   "n": 150,
+   "span_f1": 0.4401,
+   "char_f1": 0.8421,
+   "span_p": 0.6067,
+   "span_r": 0.3452
+  },
+  "kiji/English": {
+   "n": 150,
+   "span_f1": 0.3761,
+   "char_f1": 0.8367,
+   "span_p": 0.5129,
+   "span_r": 0.2968
+  },
+  "kiji/French": {
+   "n": 150,
+   "span_f1": 0.3891,
+   "char_f1": 0.8302,
+   "span_p": 0.4987,
+   "span_r": 0.319
+  },
+  "kiji/German": {
+   "n": 150,
+   "span_f1": 0.3874,
+   "char_f1": 0.8566,
+   "span_p": 0.5197,
+   "span_r": 0.3088
+  },
+  "kiji/Spanish": {
+   "n": 150,
+   "span_f1": 0.4467,
+   "char_f1": 0.8456,
+   "span_p": 0.5349,
+   "span_r": 0.3834
+  },
+  "kiji/all": {
+   "n": 900,
+   "span_f1": 0.3934,
+   "char_f1": 0.8336,
+   "span_p": 0.5241,
+   "span_r": 0.3149
+  },
+  "nemotron/English": {
+   "n": 1000,
+   "span_f1": 0.6377,
+   "char_f1": 0.8228,
+   "span_p": 0.742,
+   "span_r": 0.5592
+  },
+  "nemotron/all": {
+   "n": 1000,
+   "span_f1": 0.6377,
+   "char_f1": 0.8228,
+   "span_p": 0.742,
+   "span_r": 0.5592
+  },
+  "warnings": 0,
+  "text_mismatch": 0,
+  "seconds": 104
+ }
+}

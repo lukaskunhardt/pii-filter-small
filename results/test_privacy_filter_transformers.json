@@ -1,0 +1,279 @@
+{
+ "note": "openai/privacy-filter read through transformers like my model (arg-max per token, windows of 512 tokens, stride 128). docs: per set/language [documents, gold spans, ignored spans].",
+ "docs": {
+  "ai4privacy/English": [
+   200,
+   1068,
+   230
+  ],
+  "ai4privacy/Dutch": [
+   200,
+   1194,
+   275
+  ],
+  "ai4privacy/French": [
+   200,
+   1027,
+   222
+  ],
+  "ai4privacy/German": [
+   200,
+   1147,
+   284
+  ],
+  "ai4privacy/Italian": [
+   200,
+   974,
+   218
+  ],
+  "ai4privacy/Spanish": [
+   200,
+   1126,
+   289
+  ],
+  "nemotron/English": [
+   1000,
+   4927,
+   3404
+  ],
+  "gretel/Dutch": [
+   150,
+   423,
+   218
+  ],
+  "gretel/English": [
+   150,
+   509,
+   211
+  ],
+  "gretel/France": [
+   150,
+   440,
+   161
+  ],
+  "gretel/German": [
+   150,
+   400,
+   173
+  ],
+  "gretel/Italian": [
+   150,
+   426,
+   173
+  ],
+  "gretel/Spanish": [
+   150,
+   462,
+   169
+  ],
+  "gretel/Swedish": [
+   150,
+   498,
+   173
+  ],
+  "kiji/Danish": [
+   150,
+   1216,
+   173
+  ],
+  "kiji/Dutch": [
+   150,
+   1260,
+   184
+  ],
+  "kiji/English": [
+   150,
+   1206,
+   203
+  ],
+  "kiji/French": [
+   150,
+   1160,
+   191
+  ],
+  "kiji/German": [
+   150,
+   1237,
+   192
+  ],
+  "kiji/Spanish": [
+   150,
+   1158,
+   202
+  ]
+ },
+ "openai/privacy-filter": {
+  "ai4privacy/Dutch": {
+   "n": 200,
+   "span_f1": 0.7241,
+   "char_f1": 0.8705,
+   "span_p": 0.6554,
+   "span_r": 0.809
+  },
+  "ai4privacy/English": {
+   "n": 200,
+   "span_f1": 0.6135,
+   "char_f1": 0.7826,
+   "span_p": 0.4764,
+   "span_r": 0.8614
+  },
+  "ai4privacy/French": {
+   "n": 200,
+   "span_f1": 0.7476,
+   "char_f1": 0.8717,
+   "span_p": 0.6424,
+   "span_r": 0.8939
+  },
+  "ai4privacy/German": {
+   "n": 200,
+   "span_f1": 0.7876,
+   "char_f1": 0.9002,
+   "span_p": 0.7079,
+   "span_r": 0.8875
+  },
+  "ai4privacy/Italian": {
+   "n": 200,
+   "span_f1": 0.7727,
+   "char_f1": 0.8829,
+   "span_p": 0.6827,
+   "span_r": 0.8901
+  },
+  "ai4privacy/Spanish": {
+   "n": 200,
+   "span_f1": 0.7901,
+   "char_f1": 0.9056,
+   "span_p": 0.7098,
+   "span_r": 0.8908
+  },
+  "ai4privacy/all": {
+   "n": 1200,
+   "span_f1": 0.7349,
+   "char_f1": 0.8676,
+   "span_p": 0.6356,
+   "span_r": 0.8709
+  },
+  "gretel/Dutch": {
+   "n": 150,
+   "span_f1": 0.3375,
+   "char_f1": 0.5919,
+   "span_p": 0.2457,
+   "span_r": 0.539
+  },
+  "gretel/English": {
+   "n": 150,
+   "span_f1": 0.3688,
+   "char_f1": 0.5983,
+   "span_p": 0.2856,
+   "span_r": 0.5206
+  },
+  "gretel/France": {
+   "n": 150,
+   "span_f1": 0.4221,
+   "char_f1": 0.6824,
+   "span_p": 0.3187,
+   "span_r": 0.625
+  },
+  "gretel/German": {
+   "n": 150,
+   "span_f1": 0.3362,
+   "char_f1": 0.5673,
+   "span_p": 0.2355,
+   "span_r": 0.5875
+  },
+  "gretel/Italian": {
+   "n": 150,
+   "span_f1": 0.3123,
+   "char_f1": 0.5973,
+   "span_p": 0.2153,
+   "span_r": 0.5681
+  },
+  "gretel/Spanish": {
+   "n": 150,
+   "span_f1": 0.3835,
+   "char_f1": 0.6506,
+   "span_p": 0.2791,
+   "span_r": 0.6126
+  },
+  "gretel/Swedish": {
+   "n": 150,
+   "span_f1": 0.3224,
+   "char_f1": 0.555,
+   "span_p": 0.2309,
+   "span_r": 0.5341
+  },
+  "gretel/all": {
+   "n": 1050,
+   "span_f1": 0.353,
+   "char_f1": 0.6055,
+   "span_p": 0.256,
+   "span_r": 0.5681
+  },
+  "kiji/Danish": {
+   "n": 150,
+   "span_f1": 0.2795,
+   "char_f1": 0.715,
+   "span_p": 0.3425,
+   "span_r": 0.236
+  },
+  "kiji/Dutch": {
+   "n": 150,
+   "span_f1": 0.4139,
+   "char_f1": 0.8088,
+   "span_p": 0.55,
+   "span_r": 0.3317
+  },
+  "kiji/English": {
+   "n": 150,
+   "span_f1": 0.2531,
+   "char_f1": 0.6694,
+   "span_p": 0.2412,
+   "span_r": 0.2662
+  },
+  "kiji/French": {
+   "n": 150,
+   "span_f1": 0.3113,
+   "char_f1": 0.7299,
+   "span_p": 0.3363,
+   "span_r": 0.2897
+  },
+  "kiji/German": {
+   "n": 150,
+   "span_f1": 0.331,
+   "char_f1": 0.7522,
+   "span_p": 0.3852,
+   "span_r": 0.2902
+  },
+  "kiji/Spanish": {
+   "n": 150,
+   "span_f1": 0.3887,
+   "char_f1": 0.7674,
+   "span_p": 0.4209,
+   "span_r": 0.361
+  },
+  "kiji/all": {
+   "n": 900,
+   "span_f1": 0.3268,
+   "char_f1": 0.7368,
+   "span_p": 0.3655,
+   "span_r": 0.2956
+  },
+  "nemotron/English": {
+   "n": 1000,
+   "span_f1": 0.4713,
+   "char_f1": 0.6957,
+   "span_p": 0.4189,
+   "span_r": 0.5387
+  },
+  "nemotron/all": {
+   "n": 1000,
+   "span_f1": 0.4713,
+   "char_f1": 0.6957,
+   "span_p": 0.4189,
+   "span_r": 0.5387
+  },
+  "gpu_seconds": 1898,
+  "cpu_ms_per_1k_chars": 1198.6,
+  "cpu_threads": 3,
+  "params": 1399486865
+ }
+}

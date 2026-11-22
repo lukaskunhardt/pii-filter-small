@@ -1,0 +1,8 @@
+{
+ "note": "CPU ms per 1,000 characters, same 50 Nemotron test documents, 3 threads, one run, after one warm-up document.",
+ "threads": 3,
+ "docs": 50,
+ "privacy_filter_opf_viterbi_cpu": 16894.4,
+ "ours_s43_torch_cpu": 224.7,
+ "ours_s43_onnx_int8_cpu": 121.2
+}
