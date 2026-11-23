@@ -1,0 +1,26 @@
+nlp_engine_name: transformers
+models:
+  - lang_code: en
+    model_name: {spacy: en_core_web_sm, transformers: LukasKunhardt/pii-filter-small}
+  - lang_code: de
+    model_name: {spacy: de_core_news_sm, transformers: LukasKunhardt/pii-filter-small}
+  - lang_code: fr
+    model_name: {spacy: fr_core_news_sm, transformers: LukasKunhardt/pii-filter-small}
+  - lang_code: es
+    model_name: {spacy: es_core_news_sm, transformers: LukasKunhardt/pii-filter-small}
+ner_model_configuration:
+  labels_to_ignore: [O]
+  aggregation_strategy: simple
+  stride: 16
+  alignment_mode: expand
+  model_to_presidio_entity_mapping:
+    private_person: PERSON
+    private_address: LOCATION
+    private_date: DATE_TIME
+    private_email: EMAIL_ADDRESS
+    private_phone: PHONE_NUMBER
+    private_url: URL
+    account_number: US_BANK_NUMBER
+    secret: SECRET
+  low_confidence_score_multiplier: 0.4
+  low_score_entity_names: []
