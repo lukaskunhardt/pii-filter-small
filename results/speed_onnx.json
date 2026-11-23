@@ -1,0 +1,7 @@
+{
+ "note": "CPU ms per 1,000 characters, same 50 Nemotron test documents, 3 threads, evaluate.py --speed, one run per file, after one warm-up document. A later run than speed.json, so the machine may differ.",
+ "threads": 3,
+ "docs": 50,
+ "onnx_model_quantized_cpu": 201.7,
+ "onnx_model_fp32_cpu": 230.9
+}

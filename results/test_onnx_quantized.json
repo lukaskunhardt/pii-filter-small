@@ -1,0 +1,175 @@
+{
+ "note": "onnx/model_quantized.onnx (int8 embedding table, other weights fp32) on the four test samples, read and scored by evaluate.py (--onnx). One run, after the file was chosen on development texts.",
+ "ai4privacy/Dutch": {
+  "n": 200,
+  "span_f1": 0.6683,
+  "char_f1": 0.904,
+  "span_p": 0.6585,
+  "span_r": 0.6784
+ },
+ "ai4privacy/English": {
+  "n": 200,
+  "span_f1": 0.7169,
+  "char_f1": 0.9302,
+  "span_p": 0.6775,
+  "span_r": 0.7612
+ },
+ "ai4privacy/French": {
+  "n": 200,
+  "span_f1": 0.7082,
+  "char_f1": 0.9312,
+  "span_p": 0.6527,
+  "span_r": 0.7741
+ },
+ "ai4privacy/German": {
+  "n": 200,
+  "span_f1": 0.707,
+  "char_f1": 0.929,
+  "span_p": 0.6476,
+  "span_r": 0.7786
+ },
+ "ai4privacy/Italian": {
+  "n": 200,
+  "span_f1": 0.691,
+  "char_f1": 0.9145,
+  "span_p": 0.6351,
+  "span_r": 0.7577
+ },
+ "ai4privacy/Spanish": {
+  "n": 200,
+  "span_f1": 0.7631,
+  "char_f1": 0.9328,
+  "span_p": 0.7346,
+  "span_r": 0.794
+ },
+ "ai4privacy/all": {
+  "n": 1200,
+  "span_f1": 0.7091,
+  "char_f1": 0.9237,
+  "span_p": 0.6674,
+  "span_r": 0.7563
+ },
+ "gretel/Dutch": {
+  "n": 150,
+  "span_f1": 0.387,
+  "char_f1": 0.631,
+  "span_p": 0.2877,
+  "span_r": 0.591
+ },
+ "gretel/English": {
+  "n": 150,
+  "span_f1": 0.4463,
+  "char_f1": 0.6871,
+  "span_p": 0.366,
+  "span_r": 0.5717
+ },
+ "gretel/France": {
+  "n": 150,
+  "span_f1": 0.3943,
+  "char_f1": 0.6594,
+  "span_p": 0.2805,
+  "span_r": 0.6636
+ },
+ "gretel/German": {
+  "n": 150,
+  "span_f1": 0.4048,
+  "char_f1": 0.6404,
+  "span_p": 0.2982,
+  "span_r": 0.63
+ },
+ "gretel/Italian": {
+  "n": 150,
+  "span_f1": 0.3879,
+  "char_f1": 0.6462,
+  "span_p": 0.2799,
+  "span_r": 0.6315
+ },
+ "gretel/Spanish": {
+  "n": 150,
+  "span_f1": 0.4541,
+  "char_f1": 0.6685,
+  "span_p": 0.3421,
+  "span_r": 0.6753
+ },
+ "gretel/Swedish": {
+  "n": 150,
+  "span_f1": 0.3643,
+  "char_f1": 0.6101,
+  "span_p": 0.2619,
+  "span_r": 0.5984
+ },
+ "gretel/all": {
+  "n": 1050,
+  "span_f1": 0.4042,
+  "char_f1": 0.6488,
+  "span_p": 0.2993,
+  "span_r": 0.6219
+ },
+ "kiji/Danish": {
+  "n": 150,
+  "span_f1": 0.3227,
+  "char_f1": 0.801,
+  "span_p": 0.4752,
+  "span_r": 0.2442
+ },
+ "kiji/Dutch": {
+  "n": 150,
+  "span_f1": 0.4139,
+  "char_f1": 0.859,
+  "span_p": 0.5687,
+  "span_r": 0.3254
+ },
+ "kiji/English": {
+  "n": 150,
+  "span_f1": 0.3696,
+  "char_f1": 0.8553,
+  "span_p": 0.4852,
+  "span_r": 0.2985
+ },
+ "kiji/French": {
+  "n": 150,
+  "span_f1": 0.3823,
+  "char_f1": 0.8392,
+  "span_p": 0.4733,
+  "span_r": 0.3207
+ },
+ "kiji/German": {
+  "n": 150,
+  "span_f1": 0.4014,
+  "char_f1": 0.8808,
+  "span_p": 0.5358,
+  "span_r": 0.3209
+ },
+ "kiji/Spanish": {
+  "n": 150,
+  "span_f1": 0.4243,
+  "char_f1": 0.8261,
+  "span_p": 0.5255,
+  "span_r": 0.3558
+ },
+ "kiji/all": {
+  "n": 900,
+  "span_f1": 0.3864,
+  "char_f1": 0.8441,
+  "span_p": 0.511,
+  "span_r": 0.3106
+ },
+ "nemotron/English": {
+  "n": 1000,
+  "span_f1": 0.6211,
+  "char_f1": 0.8231,
+  "span_p": 0.6809,
+  "span_r": 0.5709
+ },
+ "nemotron/all": {
+  "n": 1000,
+  "span_f1": 0.6211,
+  "char_f1": 0.8231,
+  "span_p": 0.6809,
+  "span_r": 0.5709
+ },
+ "mean": {
+  "char_f1": 0.8099,
+  "span_f1": 0.5302
+ }
+}

@@ -15,11 +15,12 @@ pip install torch transformers huggingface_hub numpy pandas requests onnx onnxru
 import evaluate
 
 tok, labels, run = evaluate.load_model("LukasKunhardt/pii-filter-small")
-print(evaluate.read("Hi, I'm Maria Keller. Call me at +49 151 2345 6789.", tok, labels, run))
-# with ONNX Runtime: evaluate.load_model("LukasKunhardt/pii-filter-small", onnx_file="onnx/model_int8.onnx")
+print(evaluate.read("Hi, I'm Anna Müller, born 12 May 1984. Call me at +49 151 2345 6789.", tok, labels, run))
+# [(8, 19, 'private_person'), (26, 37, 'private_date'), (50, 67, 'private_phone')]
+# with ONNX Runtime: evaluate.load_model("LukasKunhardt/pii-filter-small", onnx_file="onnx/model_quantized.onnx")
 ```
 
-`read` returns `(start, end, category)` spans. It reads long texts in windows of 512 tokens that overlap by 128.
+`read` returns `(start, end, category)` spans, joined over the BIOES labels and trimmed of spaces. It reads long texts in windows of 512 tokens that overlap by 128, as in training.
 
 ## Files
 
@@ -28,7 +29,7 @@ print(evaluate.read("Hi, I'm Maria Keller. Call me at +49 151 2345 6789.", tok, 
 | `make_texts.py` | Writes texts with invented personal information through OpenRouter (`OPENROUTER_API_KEY`), and drops texts that overlap the test samples |
 | `label.py` | Labels the texts with openai/privacy-filter: spans and per-character category probabilities |
 | `train.py` | Trains the student on the teacher's spans (BIOES cross-entropy) and probabilities (KL), picks the checkpoint on development texts |
-| `export_onnx.py` | Exports to ONNX, quantises to int8 and compares both with PyTorch on the development texts |
+| `export_onnx.py` | Writes `onnx/model.onnx` (fp32) and `onnx/model_quantized.onnx` (int8 embedding table) and compares both with PyTorch on the development texts |
 | `evaluate.py` | Draws the test samples, maps their labels (`mapping.json`), reads any model the same way, scores it; also runs privacy-filter through `opf` |
 | `plot_pareto.py` | Draws the charts of the model card from `results/` |
 | `results/` | The measurement files behind the model card and `RESULTS.md` |

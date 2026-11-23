@@ -12,7 +12,7 @@ Metrics per set and language:
   char F1   binary: is this character personal information (any category)
 
   python evaluate.py --model LukasKunhardt/pii-filter-small --out results/mine.json
-  python evaluate.py --model LukasKunhardt/pii-filter-small --onnx onnx/model_int8.onnx --out results/mine_int8.json
+  python evaluate.py --model LukasKunhardt/pii-filter-small --onnx onnx/model_quantized.onnx --out results/mine_int8.json
   python evaluate.py --model openai/privacy-filter --out results/pf_transformers.json
   python evaluate.py --opf --out results/pf_opf.json          # privacy-filter with its official decoder (pip install opf)
   python evaluate.py --model ... --speed                       # CPU ms per 1,000 characters on 50 Nemotron documents

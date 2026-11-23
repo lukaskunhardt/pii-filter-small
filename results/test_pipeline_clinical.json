@@ -1,0 +1,79 @@
+{
+ "note": "pipeline('token-classification', aggregation_strategy='simple', stride=128), arg-max, on two clinical test sets outside the model's training domain: GraSCCo test (41 German letters) and MDeID test (synthetic clinical notes, 7 languages). Character precision, recall and F1 (personal or not), and the share of documents with a leak (a name, ID, phone or fax number, e-mail address or street less than half redacted), pooled per set. Scored with the research benchmark code, not evaluate.py.",
+ "sets": {
+  "grascco_test": {
+   "all": {
+    "n_docs": 41,
+    "char_p": 0.93,
+    "char_r": 0.713,
+    "char_f1": 0.8072,
+    "doc_leak_rate": 0.7317
+   },
+   "de": {
+    "n_docs": 41,
+    "char_p": 0.93,
+    "char_r": 0.713,
+    "char_f1": 0.8072,
+    "doc_leak_rate": 0.7317
+   }
+  },
+  "mdeid_test": {
+   "all": {
+    "n_docs": 2856,
+    "char_p": 0.9434,
+    "char_r": 0.7254,
+    "char_f1": 0.8202,
+    "doc_leak_rate": 0.7731
+   },
+   "de": {
+    "n_docs": 402,
+    "char_p": 0.9437,
+    "char_r": 0.7316,
+    "char_f1": 0.8242,
+    "doc_leak_rate": 0.7886
+   },
+   "en": {
+    "n_docs": 416,
+    "char_p": 0.942,
+    "char_r": 0.6785,
+    "char_f1": 0.7888,
+    "doc_leak_rate": 0.7572
+   },
+   "es": {
+    "n_docs": 408,
+    "char_p": 0.9485,
+    "char_r": 0.7542,
+    "char_f1": 0.8402,
+    "doc_leak_rate": 0.7402
+   },
+   "fr": {
+    "n_docs": 410,
+    "char_p": 0.9446,
+    "char_r": 0.7658,
+    "char_f1": 0.8459,
+    "doc_leak_rate": 0.7195
+   },
+   "it": {
+    "n_docs": 404,
+    "char_p": 0.9406,
+    "char_r": 0.75,
+    "char_f1": 0.8346,
+    "doc_leak_rate": 0.7525
+   },
+   "nl": {
+    "n_docs": 405,
+    "char_p": 0.9473,
+    "char_r": 0.671,
+    "char_f1": 0.7856,
+    "doc_leak_rate": 0.8642
+   },
+   "pt": {
+    "n_docs": 411,
+    "char_p": 0.9371,
+    "char_r": 0.7224,
+    "char_f1": 0.8158,
+    "doc_leak_rate": 0.7908
+   }
+  }
+ }
+}

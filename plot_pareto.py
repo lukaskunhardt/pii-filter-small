@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SETS = ["ai4privacy", "nemotron", "kiji", "gretel"]
-MINE, OTHER = "#0072B2", "#D55E00"  # blue and vermilion, distinct for colour-blind readers
+MINE, LIGHT, OTHER = "#0072B2", "#56B4E9", "#D55E00"  # blue, sky blue and vermilion, distinct for colour-blind readers
 
 
 def load(name):
@@ -26,16 +26,16 @@ def mean_char_f1(res):
 
 def points():
     mine, opf, tf = load("test_mine.json"), load("test_privacy_filter_opf.json"), load("test_privacy_filter_transformers.json")
-    speed = load("speed.json")
+    int8, speed, speed_onnx = load("test_onnx_quantized.json"), load("speed.json"), load("speed_onnx.json")
     params_mine = load("train_mmbert_small_seed43.json")["params"]
     params_pf = tf["openai/privacy-filter"]["params"]
-    # name, params, mean char F1, CPU ms per 1,000 characters, mine?
+    # name, params, mean char F1, CPU ms per 1,000 characters, marker (circle: other model, filled circle: mine, diamond: my int8 file)
     return [
-        ("pii-filter-small", params_mine, mean_char_f1(mine["ours_s43"]), speed["ours_s43_torch_cpu"], True),
-        ("pii-filter-small int8", params_mine, mean_char_f1(mine["ours_s43_onnx_int8"]), speed["ours_s43_onnx_int8_cpu"], True),
-        ("privacy-filter (opf)", params_pf, mean_char_f1(opf["opf_viterbi"]), speed["privacy_filter_opf_viterbi_cpu"], False),
+        ("pii-filter-small", params_mine, mean_char_f1(mine["ours_s43"]), speed["ours_s43_torch_cpu"], "mine"),
+        ("int8 file", params_mine, mean_char_f1(int8), speed_onnx["onnx_model_quantized_cpu"], "int8"),
+        ("privacy-filter (opf)", params_pf, mean_char_f1(opf["opf_viterbi"]), speed["privacy_filter_opf_viterbi_cpu"], "other"),
         ("privacy-filter (transformers)", params_pf, mean_char_f1(tf["openai/privacy-filter"]),
-         mine["privacy_filter_cpu_ms_per_1k_chars"], False),
+         mine["privacy_filter_cpu_ms_per_1k_chars"], "other"),
     ]
 
 
@@ -55,11 +55,18 @@ def draw(pts, xi, xlabel, title, caption, offsets, xlim, path):
     xy = [(p[xi], p[2]) for p in pts]
     f = front(xy)
     ax.step([x for x, _ in f], [y for _, y in f], where="post", color="#999999", lw=1.5, ls="--", zorder=1, label="Pareto front")
-    for (name, *_, mine), (x, y) in zip(pts, xy):
-        ax.scatter(x, y, s=170 if mine else 120, color=MINE if mine else "white", edgecolor=MINE if mine else OTHER, lw=2.5, zorder=3)
+    style = {"mine": dict(s=300, color=MINE, edgecolor=MINE, marker="o"), "int8": dict(s=100, color=LIGHT, edgecolor=MINE, marker="D"),
+             "other": dict(s=120, color="white", edgecolor=OTHER, marker="o")}
+    ys = {p[0]: y for p, (_, y) in zip(pts, xy)}
+    for (name, *_, kind), (x, y) in zip(pts, xy):
+        ax.scatter(x, y, lw=2.5, zorder=3, **style[kind])
+        if kind == "int8":
+            continue
+        # my two files sit almost on top of each other, so they share one label
+        text = f"{name}\nPyTorch {y:.3f}, int8 file {ys['int8 file']:.3f}" if kind == "mine" else f"{name}\n{y:.3f}"
         dx, dy, ha = offsets[name]
-        ax.annotate(f"{name}\n{y:.3f}", (x, y), xytext=(dx, dy), textcoords="offset points", ha=ha, va="center",
-                    fontsize=15, fontweight="bold" if mine else "normal", color="#222222")
+        ax.annotate(text, (x, y), xytext=(dx, dy), textcoords="offset points", ha=ha, va="center",
+                    fontsize=15, fontweight="bold" if kind == "mine" else "normal", color="#222222")
     ax.set_xscale("log")
     ax.set_xlim(*xlim)
     ax.set_ylim(0.70, 0.83)
@@ -69,8 +76,8 @@ def draw(pts, xi, xlabel, title, caption, offsets, xlim, path):
     ax.grid(alpha=0.25)
     for side in ("top", "right"):
         ax.spines[side].set_visible(False)
-    fig.text(0.5, 0.015, caption, ha="center", fontsize=12, color="#555555")
-    fig.tight_layout(rect=(0, 0.04, 1, 1))
+    fig.text(0.5, 0.012, caption, ha="center", va="bottom", fontsize=12, color="#555555", linespacing=1.4)
+    fig.tight_layout(rect=(0, 0.07, 1, 1))
     fig.savefig(path + ".png")
     fig.savefig(path + ".svg")
     plt.close(fig)
@@ -81,16 +88,14 @@ def main():
     ap.add_argument("--out", default="pareto")
     a = ap.parse_args()
     pts = points()
-    caption = "ai4privacy, Nemotron-PII, Kiji, Gretel test samples (4,150 documents). Filled: my model."
+    caption = ("ai4privacy, Nemotron-PII, Kiji, Gretel test samples (4,150 documents).\n"
+               "Blue: my model (large circle PyTorch weights, diamond int8 ONNX file).")
     draw(pts, 1, "Parameters (log scale)", "PII detection: quality against model size", caption,
-         {"pii-filter-small": (14, 26, "left"), "pii-filter-small int8": (16, -16, "left"),
-          "privacy-filter (opf)": (8, 30, "right"), "privacy-filter (transformers)": (-16, 0, "right")},
+         {"pii-filter-small": (16, -48, "left"), "privacy-filter (opf)": (8, 30, "right"), "privacy-filter (transformers)": (-16, 0, "right")},
          (6e7, 3e9), a.out + "_size")
     draw(pts, 3, "CPU milliseconds per 1,000 characters (log scale, 3 threads)", "PII detection: quality against CPU time", caption,
-         {"pii-filter-small": (14, 26, "left"), "pii-filter-small int8": (12, -30, "left"),
-          "privacy-filter (opf)": (8, 30, "right"), "privacy-filter (transformers)": (16, 0, "left")},
+         {"pii-filter-small": (-10, -48, "left"), "privacy-filter (opf)": (8, 30, "right"), "privacy-filter (transformers)": (16, 0, "left")},
          (60, 6e4), a.out + "_speed")
-
 
 if __name__ == "__main__":
     main()
