@@ -116,7 +116,10 @@ def load_model(name, onnx_file=None, device="cpu", threads=None):
     """Returns (tokenizer, labels, run). run(input_ids [1, n] tensor) -> logits [n, labels] tensor."""
     tok = AutoTokenizer.from_pretrained(name)
     cfg = AutoConfig.from_pretrained(name)
-    labels = [cfg.id2label[i] for i in range(cfg.num_labels)]
+    # Since v1.0.4 config.json names the E- and S- classes I- and B- so that pipeline() groups whole entities;
+    # the original BIOES names stay in bioes_id2label and are used here for decoding.
+    names = getattr(cfg, "bioes_id2label", None) or cfg.id2label
+    labels = [names[i] if i in names else names[str(i)] for i in range(cfg.num_labels)]
     if onnx_file:
         import onnxruntime as ort
         opts = ort.SessionOptions()

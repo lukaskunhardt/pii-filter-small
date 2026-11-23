@@ -106,6 +106,7 @@ The rules are in the Hub repo under `rules/` (German), committed to my private r
 5. Speed run with `opf` on CPU, on 50 test documents, no scores.
 6. v1.0.3: choice of the ONNX files on development texts only (commits 8e9ef58, 59ee73c), then one test run of the chosen int8 file and one speed run, under a rule written before (commit a6e2afc). Nothing about the files changed after that run.
 7. v1.0.3: one run of the official PIIMB evaluation (below), and one run of the `pipeline()` path on two clinical test sets (below).
+8. v1.0.4: one more PIIMB run with the new label names in `config.json` (E- → I-, S- → B-), under a rule written before the run; v1.0.3 labels gave a mean F2 of 0.674, the new ones 0.676. Only the names changed, not the weights. The clinical `pipeline()` numbers in this file were measured with the v1.0.3 names.
 
 The overlap check in `make_texts.py` read the test texts (not their labels) and dropped 124 of 24,000 generated texts (`results/overlap_check.json`).
 
@@ -137,7 +138,7 @@ I ran the official `piimb evaluate` with default settings on the released weight
 | 20 | bardsai/eu-pii-anonimization-multilang | 278 M | 0.831 | 0.843 | 0.890 | 0.254 | 0.715 | 0.575 | 0.685 |
 | 21 | scanpatch/pii-ner-nemotron | 559 M | 0.820 | 0.806 | 0.741 | 0.573 | 0.578 | 0.561 | 0.680 |
 | 22 | knowledgator/gliner-pii-base-v1.0 | 166 M | 0.795 | 0.727 | 0.894 | 0.332 | 0.777 | 0.546 | 0.678 |
-| 23 | **LukasKunhardt/pii-filter-small** | 141 M | 0.901 | 0.845 | 0.898 | 0.290 | 0.616 | 0.495 | 0.674 |
+| 23 | **LukasKunhardt/pii-filter-small** (v1.0.4 labels) | 141 M | 0.902 | 0.845 | 0.903 | 0.290 | 0.616 | 0.499 | 0.676 |
 | 24 | urchade/gliner_multi_pii-v1 | 289 M | 0.735 | 0.762 | 0.795 | 0.424 | 0.731 | 0.555 | 0.667 |
 | 25 | openai/privacy-filter | 1,399 M | 0.843 | 0.805 | 0.869 | 0.313 | 0.607 | 0.536 | 0.662 |
 | 26 | fastino/gliner2-base-v1 | 208 M | 0.750 | 0.723 | 0.891 | 0.292 | 0.739 | 0.499 | 0.649 |

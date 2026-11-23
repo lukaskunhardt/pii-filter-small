@@ -1,5 +1,5 @@
 {
- "note": "PIIMB (piimb/pii-masking-benchmark), character-level masking F2 per task (scores.test[0].f2), mean over six tasks. Other models from the dataset piimb/pii-masking-benchmark-results; pii-filter-small from my own run of piimb evaluate with default settings.",
+ "note": "PIIMB (piimb/pii-masking-benchmark), character-level masking F2 per task (scores.test[0].f2), mean over six tasks. Other models from the dataset piimb/pii-masking-benchmark-results; pii-filter-small from my own run of piimb evaluate with default settings. v1.0.4: my run with the v1.0.4 config.json (same weights), job 6b04283aa02d1cf5a7b78d2c; v1.0.3 mean in v1.0.3_mean_f2.",
  "tasks": [
   "ai4privacy-en",
   "ai4privacy-multi",
@@ -323,13 +323,15 @@
    "dtype": "float32",
    "n_parameters": 140654241,
    "license": "mit",
-   "mean_f2": 0.6743,
-   "ai4privacy-en": 0.9013,
-   "ai4privacy-multi": 0.845,
-   "gretel": 0.8984,
-   "mapa-eur-lex": 0.2901,
-   "nemotron-pii": 0.6155,
-   "privy": 0.4955
+   "mean_f2": 0.676,
+   "ai4privacy-en": 0.902,
+   "ai4privacy-multi": 0.8454,
+   "gretel": 0.9029,
+   "mapa-eur-lex": 0.2903,
+   "nemotron-pii": 0.616,
+   "privy": 0.4994,
+   "v1.0.3_mean_f2": 0.6743,
+   "config": "v1.0.4 (B/I names for BIOES classes)"
   },
   {
    "rank": 24,
